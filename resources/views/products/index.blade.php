@@ -100,42 +100,37 @@
                         </a>
                     </div>
 
-                    <div class="row">
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" width="100%" cellspacing="0">
-                                    <thead>
-                                        <th>Name</th>
-                                        <th>Description</th>
-                                        <th>Price</th>
-                                        <th>Manage</th>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($products as $product)
-                                            <tr>
-                                                <td>{{ $product->name }}</td>
-                                                <td>{{ $product->description }}</td>
-                                                <td>{{ $product->price }}</td>
-                                                <td>
-                                                    <a href="/products/{{ $product->id }}/edit" class="btn btn-info">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" width="100%" cellspacing="0">
+                                <thead>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Price</th>
+                                    <th>Manage</th>
+                                </thead>
+                                 <tbody>
+                                    @foreach ($products as $product)
+                                        <tr>
+                                            <td>{{ $product->name }}</td>
+                                            <td>{{ $product->description }}</td>
+                                            <td>{{ $product->price }}</td>
+                                            <td>
+                                                <a href="/products/{{ $product->id }}/edit" class="btn btn-info">
                                                         <i class="fa fa-pencil-alt"></i>
-                                                    </a>
-                                                    <form action="/products/{{ $product->id }}" method="POST">
-                                                     @method('DELETE')
-                                                     @csrf
-                                                     <button class="btn btn-danger">
-                                                        <i class="fa fa-trash"></i>
-                                                     </button>
-                                                    </form>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
+                                                </a>
+                                                 <form action="/products/{{ $product->id }}" method="POST">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                    <button class="btn btn-danger">
+                                                    <i class="fa fa-trash"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
-
                 </div>
                 <!-- /.container-fluid -->
 
